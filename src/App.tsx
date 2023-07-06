@@ -1,7 +1,9 @@
 import Router from "./Router";
 
+import { useState } from "react";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { createGlobalStyle, css } from "styled-components";
+import { ThemeProvider, createGlobalStyle, css } from "styled-components";
+import { darkTheme, lightTheme } from "./theme";
 
 // prettier-ignore
 export const reset = css`
@@ -68,11 +70,19 @@ a {
 export const Reset = createGlobalStyle`${reset}`;
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
   return (
     <>
-      <Reset />
-      <Router />
-      <ReactQueryDevtools />
+      <button onClick={toggleTheme}>Toggle Theme</button>
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+        <Reset />
+        <Router />
+        <ReactQueryDevtools />
+      </ThemeProvider>
     </>
   );
 }

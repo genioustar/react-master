@@ -18,3 +18,12 @@ https://styled-components.com/docs/api#typescript
 
 react 18에서 사용하려면 mpn i react-query가 아니라 아래처럼 설치해야함!
 npm i @tanstack/react-query
+
+# apexcharts 설치하기
+
+npm install --save react-apexcharts apexcharts
+
+# react helmat 설치하기
+
+npm i react-helmet
+npm i --save-dev @types/react-helmet
