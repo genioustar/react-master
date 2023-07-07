@@ -68,6 +68,7 @@ function Coins() {
     <Container>
       <Helmet>
         <title>코인</title>
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
       </Helmet>
       <Header>
         <Title>코인</Title>
