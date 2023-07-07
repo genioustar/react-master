@@ -20,10 +20,20 @@ const Title = styled.h1`
 `;
 
 const Back = styled.button`
-  background-color: "red";
-  color: "white";
-  padding: 10px;
+  margin-top: 10px;
+  position: absolute;
+  right: 10px;
   border: none;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  background-color: aliceblue;
+  color: #1e6b7b;
   cursor: pointer;
 `;
 

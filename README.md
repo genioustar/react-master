@@ -27,3 +27,8 @@ npm install --save react-apexcharts apexcharts
 
 npm i react-helmet
 npm i --save-dev @types/react-helmet
+
+# gh-pages 설치
+
+결과물을 github page에 공유할 수 있게 해주는 패키지
+npm i gh-pages
