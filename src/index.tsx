@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { RecoilRoot } from "recoil";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
@@ -11,13 +12,13 @@ const root = ReactDOM.createRoot(
 const queryClient = new QueryClient();
 
 root.render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      {/* <ThemeProvider theme={lightTheme}> */}
-      <App />
-      {/* </ThemeProvider> */}
-    </QueryClientProvider>
-  </React.StrictMode>
+  <RecoilRoot>
+    <React.StrictMode>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    </React.StrictMode>
+  </RecoilRoot>
 );
 
 reportWebVitals();

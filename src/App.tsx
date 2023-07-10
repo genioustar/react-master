@@ -1,12 +1,9 @@
 import Router from "./Router";
 
-import { useState } from "react";
 import { ReactQueryDevtools } from "react-query/devtools";
-import styled, {
-  ThemeProvider,
-  createGlobalStyle,
-  css,
-} from "styled-components";
+import { useRecoilValue } from "recoil";
+import { ThemeProvider, createGlobalStyle, css } from "styled-components";
+import { isDarkAtom } from "./atoms";
 import { darkTheme, lightTheme } from "./theme";
 
 // prettier-ignore
@@ -72,34 +69,12 @@ a {
 `
 
 export const Reset = createGlobalStyle`${reset}`;
-const BgButton = styled.button`
-  margin-top: 10px;
-  position: absolute;
-  margin-left: 10px;
-  border: none;
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-family: "paybooc-Light", sans-serif;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.25s;
-  background-color: aliceblue;
-  color: #1e6b7b;
-  cursor: pointer;
-`;
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-  };
+  const isDark = useRecoilValue(isDarkAtom);
   return (
     <>
-      <BgButton onClick={toggleTheme}>Toggle Theme</BgButton>
-      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <Reset />
         <Router />
         <ReactQueryDevtools />
