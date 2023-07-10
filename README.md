@@ -32,3 +32,7 @@ npm i --save-dev @types/react-helmet
 
 결과물을 github page에 공유할 수 있게 해주는 패키지
 npm i gh-pages
+
+# recoil 설치
+
+npm install recoil
